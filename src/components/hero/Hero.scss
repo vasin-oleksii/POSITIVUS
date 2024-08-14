@@ -1,0 +1,53 @@
+@import "../../index.scss";
+.hero {
+  margin-top: 70px;
+  &__container {
+    display: flex;
+    gap: 110px;
+    div {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      h1.disappearing-phone {
+        @include respond(tab-land) {
+          display: none;
+        }
+      }
+      p {
+        margin-top: 35px;
+        @include respond(tab-land) {
+          margin-top: 20px;
+          padding-right: 10px;
+        }
+      }
+      button.btn {
+        margin-top: 35px;
+        @include respond(tab-land) {
+          margin-top: 40px;
+        }
+      }
+    }
+    img {
+      @include respond(tab-land) {
+        width: 70%;
+        height: auto;
+      }
+      @include respond(tab-port) {
+        margin-top: 10px;
+      }
+    }
+    h1.apparing-phone {
+      display: none;
+      @include respond(tab-land) {
+        display: block;
+      }
+    }
+    @include respond(tab-land) {
+      gap: 0;
+      flex-direction: column-reverse;
+    }
+  }
+  @include respond(phone) {
+    margin-top: 40px;
+  }
+}

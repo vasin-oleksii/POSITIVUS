@@ -1,0 +1,87 @@
+@import "../../index.scss";
+.navbar {
+  margin-top: 60px;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      img {
+        @include respond(phone) {
+          height: 20px;
+          width: auto;
+        }
+      }
+    }
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      ul {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0 40px;
+        @include respond(tab-land) {
+          gap: 0 20px;
+        }
+        @include respond(tab-port) {
+          position: absolute;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(5, 1fr);
+          gap: 10px 0;
+          top: 100px;
+          left: 0;
+          margin-top: 1rem;
+          padding: 2rem;
+          width: 100%;
+          background-color: var(--white);
+          border-top: 1px var(--black) solid;
+          border-bottom: 1px var(--black) solid;
+        }
+        li {
+          @include respond(large-screen) {
+            text-align: right;
+          }
+          @include respond(tab-port) {
+            text-align: left;
+          }
+        }
+      }
+
+      button.btn-clear {
+        background: var(--white);
+        color: var(--black);
+        &:hover {
+          background-color: var(--black);
+          color: var(--white);
+        }
+        @include respond(large-screen) {
+          display: none;
+        }
+      }
+      @include respond(tab-port) {
+        display: none;
+      }
+    }
+    .navbar__menu {
+      display: none;
+      cursor: pointer;
+      @include respond(tab-port) {
+        display: grid;
+        place-items: center;
+        color: var(--black);
+        font-size: 2.2rem;
+      }
+    }
+  }
+  .show {
+    display: flex;
+  }
+
+  @include respond(tab-port) {
+    margin-top: 40px;
+  }
+  @include respond(phone) {
+    margin-top: 30px;
+  }
+}

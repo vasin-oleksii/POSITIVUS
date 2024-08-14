@@ -1,0 +1,132 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media screen and (max-width: 37.5em) {
+      @content;
+    } // 600px
+  }
+  @if $breakpoint == tab-port {
+    @media screen and (max-width: 56.25em) {
+      @content;
+    } // 900px
+  }
+  @if $breakpoint == tab-land {
+    @media screen and (max-width: 75em) {
+      @content;
+    } // 1200px
+  }
+  @if $breakpoint == large-screen {
+    @media screen and (max-width: 87.5em) {
+      @content;
+    } // 1400px
+  }
+}
+
+:root {
+  --white: #fff;
+  --inchworm: #b9ff66;
+  --black: #191a23;
+  --grey: #f3f3f3;
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  line-height: 1.5;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  color: var(--black);
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+}
+h1 {
+  font-size: 60px;
+  @include respond(tab-port) {
+    font-size: 43px;
+  }
+}
+h2 {
+  font-size: 40px;
+  @include respond(tab-port) {
+    font-size: 36px;
+  }
+}
+h3 {
+  font-size: 30px;
+  @include respond(tab-port) {
+    font-size: 26px;
+  }
+}
+h4 {
+  font-size: 20px;
+  @include respond(tab-port) {
+    font-size: 18px;
+  }
+}
+p {
+  font-size: 18px;
+  font-weight: 400;
+  @include respond(tab-port) {
+    font-size: 16px;
+  }
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 5rem;
+
+  @include respond(tab-land) {
+    padding-inline: 1.5rem;
+  }
+
+  @include respond(phone) {
+    padding-inline: 0.8rem;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  background: var(--black);
+  padding: 20px 35px;
+  border-radius: 14px;
+  color: var(--grey);
+  border: 1px solid var(--black);
+  font-size: 20px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  display: inline-block;
+
+  &:hover {
+    background: var(--inchworm);
+    color: var(--black);
+  }
+}
