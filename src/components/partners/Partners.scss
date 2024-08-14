@@ -2,6 +2,7 @@
 
 .partners {
   margin-top: 70px;
+  overflow-x: hidden;
   &__container {
     display: flex;
     justify-content: center;
@@ -13,24 +14,11 @@
       width: 100%;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-      // gap: 10px;
       place-items: center;
-      // grid-auto-flow: row;
-      // display: flex;
-      // justify-content: space-between;
-
-      // align-items: center;
-      // gap: 95px;
-      overflow-x: hidden;
-
       @include respond(phone) {
         gap: 38px;
       }
       @include respond(tab-land) {
-        // grid-template-columns: repeat(3, 150px);
-        // grid-template-rows: repeat(2, 1fr);
-        // // gap: 0 37px;
-        // gap: 0;
       }
       li {
         img {
