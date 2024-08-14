@@ -1,10 +1,10 @@
 import "./hero.scss";
-import "../../index.scss";
 import IlustrationHero from "../../assets/Illustration.svg";
+import Partners from "../partners/Partners";
 
 const Hero = () => {
   return (
-    <main className="hero">
+    <section className="hero">
       <div className="hero__container wrapper">
         <div>
           <h1 className="disappearing-phone">
@@ -22,7 +22,8 @@ const Hero = () => {
           Navigating the digital landscape for success
         </h1>
       </div>
-    </main>
+      <Partners />
+    </section>
   );
 };
 
