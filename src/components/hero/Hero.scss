@@ -33,6 +33,7 @@
         height: auto;
       }
       @include respond(tab-port) {
+        width: 90%;
         margin-top: 10px;
       }
     }
