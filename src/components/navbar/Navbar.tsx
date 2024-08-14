@@ -1,4 +1,4 @@
-import "./navbar.scss";
+import "./Navbar.scss";
 import Logo from "../../assets/Logo.svg";
 import { IoMenuOutline } from "react-icons/io5";
 import { IoCloseOutline } from "react-icons/io5";

@@ -1,4 +1,4 @@
-import "./hero.scss";
+import "./Hero.scss";
 import IlustrationHero from "../../assets/Illustration.svg";
 import Partners from "../partners/Partners";
 
