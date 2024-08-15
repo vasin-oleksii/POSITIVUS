@@ -18,7 +18,13 @@
       @include respond(phone) {
         gap: 38px;
       }
-      @include respond(tab-land) {
+      @include respond(small-phone) {
+        gap: 0px;
+        li {
+          img {
+            width: 80%;
+          }
+        }
       }
       li {
         img {
@@ -38,15 +44,40 @@
     @include respond(phone) {
       padding-top: 20px;
       width: 110%;
-      margin-right: 100px;
+      animation: moveMarginRight 10s infinite;
+      @keyframes moveMarginRight {
+        0% {
+          margin-right: 0px;
+        }
+        50% {
+          margin-right: 150px;
+        }
+        100% {
+          margin-right: 0px;
+        }
+      }
     }
   }
   ul.left {
     @include respond(phone) {
       width: 110%;
-      margin-left: 90px;
       li:first-child {
         margin-left: 17px;
+      }
+      animation: moveMarginLeft 10s infinite;
+      @keyframes moveMarginLeft {
+        0% {
+          margin-left: 0px;
+        }
+        50% {
+          margin-left: 90px;
+        }
+        100% {
+          margin-left: 0px;
+        }
+      }
+      li {
+        gap: 100px;
       }
     }
   }
