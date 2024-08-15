@@ -2,6 +2,17 @@ import "./Favors.scss";
 import InfoBlock from "../common/InfoBlock/InfoBlock";
 import { favorsInfo } from "../../Data";
 
+export interface FavorInfo {
+  image: string;
+  name: string;
+  subName: string;
+  namesColorBackground: string;
+  cardColorBackground: string;
+  arrowColor: string;
+  arrowColorBackground: string;
+  id: number;
+}
+
 const Favors = () => {
   return (
     <section className="favors">
@@ -21,7 +32,7 @@ const Favors = () => {
               arrowColor,
               arrowColorBackground,
               id,
-            }) => (
+            }: FavorInfo) => (
               <li
                 key={id}
                 className="card"
