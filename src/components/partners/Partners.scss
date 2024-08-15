@@ -15,7 +15,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
       place-items: center;
-      @include respond(phone) {
+      @include respond(tab-land) {
         gap: 38px;
       }
       @include respond(small-phone) {
@@ -41,7 +41,7 @@
     }
   }
   ul.right {
-    @include respond(phone) {
+    @include respond(tab-port) {
       padding-top: 20px;
       width: 110%;
       animation: moveMarginRight 10s infinite;
@@ -59,7 +59,7 @@
     }
   }
   ul.left {
-    @include respond(phone) {
+    @include respond(tab-port) {
       width: 110%;
       li:first-child {
         margin-left: 17px;

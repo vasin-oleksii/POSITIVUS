@@ -1,0 +1,81 @@
+@import "../../index.scss";
+
+.favors {
+  margin-top: 140px;
+  @include respond(phone) {
+    margin-top: 60px;
+  }
+  .cards {
+    margin-top: 80px;
+    display: grid;
+    gap: 40px;
+    justify-self: center;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    @include respond(tab-port) {
+      margin-top: 40px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(phone) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    li.card {
+      position: relative;
+
+      display: flex;
+      justify-content: space-between;
+      padding: 42px;
+      border-radius: 45px;
+      border: 1px var(--black) solid;
+      box-shadow: 0px 5px 0px 0px var(--black);
+
+      .left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+      .titles {
+        display: flex;
+        flex-direction: column;
+        div h3 {
+          display: inline;
+          padding-inline: 7px;
+          border-radius: 7px;
+          @include respond(tab-port) {
+            font-size: 26px;
+          }
+        }
+        div {
+          display: flex;
+        }
+      }
+    }
+    a {
+      cursor: pointer;
+      margin-top: 93px;
+      display: flex;
+      align-items: center;
+      p {
+        font-size: 20px;
+        margin-left: 15px;
+        @include respond(tab-land) {
+          display: none;
+        }
+      }
+    }
+    div.right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include respond(tab-land) {
+        top: 35%;
+        right: 5%;
+        position: absolute;
+        transform: scale(0.8);
+      }
+    }
+  }
+}

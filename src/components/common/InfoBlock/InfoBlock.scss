@@ -1,0 +1,27 @@
+@import "../../../index.scss";
+
+.infoBlock {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  h2 {
+    background: var(--inchworm);
+    padding-inline: 7px;
+    border-radius: 7px;
+    margin-right: 40px;
+    @include respond(phone) {
+      margin-right: 0;
+    }
+  }
+  p {
+    max-width: 580px;
+    @include respond(phone) {
+      margin-top: 30px;
+      text-align: center;
+    }
+  }
+  @include respond(phone) {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
