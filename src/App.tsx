@@ -5,9 +5,9 @@ import Favors from "./components/favors/Favors";
 function App() {
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar />
       <main>
-        <Hero></Hero>
+        <Hero />
         <Favors />
       </main>
     </>
