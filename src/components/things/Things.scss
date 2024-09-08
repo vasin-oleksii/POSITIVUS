@@ -1,0 +1,47 @@
+@import "../../index.scss";
+
+.things {
+  margin-top: 100px;
+  &__container {
+    display: flex;
+    align-items: center;
+    .things__content {
+      position: relative;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      border-radius: 45px;
+      background: var(--grey);
+      @include respond(tab-land) {
+        justify-content: center;
+      }
+      .description {
+        margin-block: 60px;
+        margin-left: 60px;
+        max-width: 500px;
+        @include respond(tab-land) {
+          margin: 60px;
+        }
+        p {
+          margin-top: 26px;
+        }
+        button {
+          margin-top: 26px;
+          @include respond(phone) {
+            font-size: 19px;
+          }
+        }
+      }
+      .img {
+        position: absolute;
+        right: 135px;
+        @include respond(tab-land) {
+          display: none;
+        }
+      }
+    }
+  }
+}

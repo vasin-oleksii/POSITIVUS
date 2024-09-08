@@ -1,0 +1,45 @@
+@import "../../index.scss";
+
+.studies {
+  margin-top: 163.5px;
+  &__container {
+    .studies__content {
+      display: grid;
+      gap: 64px;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 70px 60px;
+
+      margin-top: 85px;
+      border-radius: 45px;
+      background: var(--black);
+
+      @include respond(tab-land) {
+        grid-template-columns: repeat(3, 1fr);
+        // background: var(--white);
+
+        padding: 42px 50px;
+      }
+      .content__item {
+        a {
+          cursor: pointer;
+          padding-top: 20px;
+          display: flex;
+          p {
+            font-size: 20px;
+          }
+        }
+        p {
+          color: var(--white);
+        }
+        &:first-child {
+          padding-right: 64px;
+          border-right: 1px solid var(--white);
+        }
+        &:last-child {
+          padding-left: 64px;
+          border-left: 1px solid var(--white);
+        }
+      }
+    }
+  }
+}
