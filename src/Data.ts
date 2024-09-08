@@ -165,31 +165,31 @@ export const processInfo = [
   {
     id: 2,
     text: "Research and Strategy Development",
-    descripton:
+    description:
       "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
   },
   {
     id: 3,
     text: "Implementation",
-    descripton:
+    description:
       "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
   },
   {
     id: 4,
     text: "Monitoring and Optimization",
-    descripton:
+    description:
       "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
   },
   {
     id: 5,
     text: "Reporting and Communication",
-    descripton:
+    description:
       "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
   },
   {
     id: 6,
     text: "Continual Improvement",
-    descripton:
+    description:
       "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
   },
 ];

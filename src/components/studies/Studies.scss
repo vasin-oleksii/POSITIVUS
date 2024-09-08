@@ -4,6 +4,7 @@
   margin-top: 163.5px;
   &__container {
     .studies__content {
+      overflow: hidden;
       display: grid;
       gap: 64px;
       grid-template-columns: repeat(3, 1fr);

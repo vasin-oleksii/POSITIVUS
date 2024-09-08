@@ -8,13 +8,15 @@ import { useState } from "react";
 export interface ProcessInfo {
   id: number;
   text: string;
-  descripton: string;
+  description: string;
 }
 
 const Process = () => {
-  const [itemClicked, setItemClicked] = useState(false);
+  const [activeItemId, setActiveItemId] = useState<number | null>(null);
 
-  //   const onCLickLabel = (id : number) => id
+  const handleActiveItemId = (id: number) => {
+    setActiveItemId(activeItemId === id ? null : id);
+  };
 
   return (
     <section className="process">
@@ -24,32 +26,35 @@ const Process = () => {
           description="Step-by-Step Guide to Achieving Your Business Goals"
         />
         <div className="process__content">
-          {processInfo.map(({ id, text, description: descripton }) => (
-            <div className={itemClicked ? "item active" : "item"} key={id}>
-              <div className={itemClicked ? "top active" : "top"}>
+          {processInfo.map(({ id, text, description }: ProcessInfo) => (
+            <div
+              className={activeItemId === id ? "item active" : "item"}
+              key={id}
+            >
+              <div className={activeItemId === id ? "top active" : "top"}>
                 <div className="left">
                   <div className="number">0{id}</div>
                   <p>{text}</p>
                 </div>
 
-                {itemClicked ? (
+                {activeItemId === id ? (
                   <img
                     src={BtnMinus}
                     alt="BtnMinus"
                     className="right"
-                    onClick={() => setItemClicked(!itemClicked)}
+                    onClick={() => handleActiveItemId(id)}
                   />
                 ) : (
                   <img
                     src={BtnPlus}
                     alt="BtnPlus"
                     className="right"
-                    onClick={() => setItemClicked(!itemClicked)}
+                    onClick={() => handleActiveItemId(id)}
                   />
                 )}
               </div>
-              <div className={itemClicked ? "bottom" : "bottom hidden"}>
-                <p>{descripton}</p>
+              <div className={activeItemId === id ? "bottom" : "bottom hidden"}>
+                <p>{description}</p>
               </div>
             </div>
           ))}

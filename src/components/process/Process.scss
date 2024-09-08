@@ -39,7 +39,7 @@
           }
           .right {
             cursor: pointer;
-            @include respond(tab-land) {
+            @include respond(phone) {
               width: 30px;
             }
           }

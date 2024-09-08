@@ -33,6 +33,12 @@
         padding-top: 28px;
       }
     }
+    @include respond(tab-land) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(phone) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
   .more {
     margin-top: 60px;
