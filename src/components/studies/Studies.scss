@@ -14,12 +14,18 @@
       background: var(--black);
 
       @include respond(tab-land) {
-        grid-template-columns: repeat(3, 1fr);
-        // background: var(--white);
-
-        padding: 42px 50px;
+        margin-top: 40px;
+        padding: 0;
+        gap: 20px;
+        background: var(--white);
+        grid-template-columns: repeat(3, 350px);
       }
       .content__item {
+        @include respond(tab-land) {
+          padding: 42px 50px;
+          background: var(--black);
+          border-radius: 45px;
+        }
         a {
           cursor: pointer;
           padding-top: 20px;

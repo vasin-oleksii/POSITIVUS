@@ -3,6 +3,8 @@ import Navbar from "./components/navbar/Navbar";
 import Favors from "./components/favors/Favors";
 import Things from "./components/things/Things";
 import Studies from "./components/studies/Studies";
+import Process from "./components/process/Process";
+import Team from "./components/team/Team";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Favors />
       <Things />
       <Studies />
+      <Process />
+      <Team />
     </>
   );
 }

@@ -1,0 +1,69 @@
+@import "../../index.scss";
+
+.process {
+  margin-top: 140px;
+  &__container {
+    .process__content {
+      margin-top: 80px;
+      .item {
+        padding: 41px 60px;
+        border: 1px solid var(--black);
+        border-radius: 45px;
+        background: var(--grey);
+        box-shadow: 0px 5px 0px 0px var(--black);
+        margin-bottom: 30px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .top {
+          display: flex;
+          justify-content: space-between;
+          .left {
+            display: flex;
+            align-items: center;
+            .number {
+              font-weight: 500;
+              font-size: 60px;
+              margin-right: 25px;
+              @include respond(tab-land) {
+                font-size: 30px;
+              }
+            }
+            p {
+              font-weight: 500;
+              font-size: 30px;
+              @include respond(phone) {
+                font-size: 18px;
+              }
+            }
+          }
+          .right {
+            cursor: pointer;
+            @include respond(tab-land) {
+              width: 30px;
+            }
+          }
+        }
+        .top.active {
+          padding-bottom: 30px;
+          @include respond(tab-land) {
+            padding-bottom: 15px;
+          }
+        }
+        .bottom {
+          border-top: 1px solid var(--black);
+          padding-top: 30px;
+        }
+        .bottom.hidden {
+          display: none;
+        }
+        @include respond(tab-land) {
+          padding: 30px;
+        }
+      }
+    }
+    .item.active {
+      background: var(--inchworm);
+    }
+  }
+}
