@@ -2,6 +2,63 @@
 
 .testimonials {
   margin-top: 100px;
+
+  &__container {
+    position: relative;
+
+    .content {
+      margin-top: 85px;
+      padding: 84px 0px 68px 0px;
+      align-items: center;
+      border-radius: 45px;
+      background: var(--black);
+
+      &__item {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p {
+          color: var(--white);
+        }
+
+        .top {
+          max-width: 502px;
+          padding: 48px 52px 51.95px 52px;
+          border: 1px solid var(--inchworm);
+          border-radius: 45px;
+          display: flex;
+          justify-content: center;
+        }
+        .bottom {
+          margin-top: 48.05px;
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          align-items: start;
+          .polygon {
+            position: absolute;
+            bottom: 70px;
+            left: 94px;
+            @include respond(tab-port) {
+              bottom: 66px;
+              left: 32%;
+            }
+            @include respond(phone) {
+              bottom: 67px;
+              left: 13%;
+            }
+          }
+          .name {
+            font-size: 20px;
+            color: var(--inchworm);
+          }
+        }
+      }
+    }
+  }
+
   @include respond(phone) {
     margin-top: 60px;
   }
