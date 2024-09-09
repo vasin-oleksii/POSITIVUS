@@ -5,6 +5,7 @@ import Things from "./components/things/Things";
 import Studies from "./components/studies/Studies";
 import Process from "./components/process/Process";
 import Team from "./components/team/Team";
+import Testimonials from "./components/testimonials/Testimonials";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Studies />
       <Process />
       <Team />
+      <Testimonials />
     </>
   );
 }

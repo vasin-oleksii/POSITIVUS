@@ -23,7 +23,7 @@
       }
       .content__item {
         @include respond(tab-land) {
-          padding: 42px 50px;
+          padding: 42px 50px !important;
           background: var(--black);
           border-radius: 45px;
         }
@@ -48,5 +48,19 @@
         }
       }
     }
+    .mobile--hide {
+      @include respond(tab-land) {
+        display: none;
+      }
+    }
+    .mobile--show {
+      display: none;
+      @include respond(tab-land) {
+        display: block;
+      }
+    }
+  }
+  @include respond(phone) {
+    margin-top: 60px;
   }
 }

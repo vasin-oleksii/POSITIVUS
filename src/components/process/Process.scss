@@ -61,9 +61,15 @@
           padding: 30px;
         }
       }
+      @include respond(phone) {
+        margin-top: 30px;
+      }
     }
     .item.active {
       background: var(--inchworm);
     }
+  }
+  @include respond(phone) {
+    margin-top: 60px;
   }
 }

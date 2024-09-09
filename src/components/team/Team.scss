@@ -2,11 +2,10 @@
 
 .team {
   padding-top: 140px;
-
   .content {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
+
     gap: 40px;
     padding-top: 80px;
     &__item {
@@ -35,6 +34,7 @@
     }
     @include respond(tab-land) {
       grid-template-columns: repeat(2, 1fr);
+      padding-top: 40px;
     }
     @include respond(phone) {
       grid-template-columns: repeat(1, 1fr);
@@ -46,6 +46,12 @@
     justify-content: end;
     .btn {
       padding: 20px 55px;
+      @include respond(phone) {
+        width: 100%;
+      }
     }
+  }
+  @include respond(phone) {
+    padding-top: 60px;
   }
 }
