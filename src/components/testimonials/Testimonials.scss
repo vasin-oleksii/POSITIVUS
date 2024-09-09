@@ -30,6 +30,10 @@
           border-radius: 45px;
           display: flex;
           justify-content: center;
+          @include respond(phone) {
+            max-width: 270px;
+            padding: 30px 30px 32.28px 30px;
+          }
         }
         .bottom {
           margin-top: 48.05px;
@@ -47,7 +51,7 @@
             }
             @include respond(phone) {
               bottom: 67px;
-              left: 13%;
+              left: 27%;
             }
           }
           .name {
