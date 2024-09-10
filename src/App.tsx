@@ -7,6 +7,7 @@ import Process from "./components/process/Process";
 import Team from "./components/team/Team";
 import Testimonials from "./components/testimonials/Testimonials";
 import Contact from "./components/сontact/Contact";
+import Foother from "./components/foother/Foother";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Team />
       <Testimonials />
       <Contact />
+      <Foother />
     </>
   );
 }

@@ -9,7 +9,7 @@
       padding: 60px 100px 80px 100px;
       border-radius: 45px;
       background: var(--grey);
-
+      overflow: hidden;
       img {
         position: absolute;
         right: -324px;
@@ -117,6 +117,12 @@
         padding: 0;
         background: var(--white);
       }
+      @include respond(phone) {
+        border-radius: 0px;
+      }
     }
+  }
+  @include respond(phone) {
+    margin-top: 60px;
   }
 }

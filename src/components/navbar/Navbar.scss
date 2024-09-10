@@ -45,6 +45,11 @@
           @include respond(tab-port) {
             text-align: left;
           }
+          a {
+            &:hover {
+              text-decoration: underline;
+            }
+          }
         }
       }
 

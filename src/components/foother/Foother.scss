@@ -1,0 +1,217 @@
+@import "../../index.scss";
+
+.foother {
+  margin-top: 140px;
+  color: var(--white);
+
+  &__container {
+    .content {
+      border-radius: 45px 45px 0px 0px;
+      background: var(--black);
+      &__inner {
+        overflow: hidden;
+        padding: 55px 60px 50px 60px;
+        .top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          ul {
+            display: flex;
+            text-align: center;
+
+            li {
+              padding-right: 40px;
+              a {
+                text-decoration: underline;
+                color: var(--white);
+                &:hover {
+                  text-decoration: none;
+                }
+                @include respond(tab-land) {
+                  padding-top: 0px;
+                  &:first-child {
+                    padding-top: 0;
+                  }
+                }
+              }
+              &:last-child {
+                padding-right: 0;
+              }
+
+              @include respond(tab-land) {
+                padding-top: 15px;
+                padding-right: 0px;
+                &:first-child {
+                  padding-top: 0px;
+                }
+              }
+            }
+            @include respond(tab-land) {
+              flex-direction: column;
+              padding-top: 37px;
+            }
+          }
+          .social {
+            display: flex;
+            img {
+              cursor: pointer;
+              margin-right: 20px;
+              &:last-child {
+                margin-right: 0;
+              }
+              @include respond(tab-land) {
+                margin-right: 10px;
+              }
+            }
+          }
+          .social.desktop-show {
+            @include respond(tab-land) {
+              display: none;
+            }
+          }
+          @include respond(tab-land) {
+            flex-direction: column;
+          }
+        }
+        .medium {
+          margin-top: 66px;
+
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          padding-bottom: 50px;
+          border-bottom: 1px solid var(--white);
+
+          .left {
+            .contactus {
+              display: inline-block;
+              padding: 0px 7px;
+              background: var(--inchworm);
+              border-radius: 7px;
+              font-size: 20px;
+              color: var(--black);
+            }
+            .email {
+              margin-top: 27px;
+              @include respond(tab-land) {
+                margin-top: 37px;
+              }
+            }
+            .phone {
+              margin-top: 20px;
+              @include respond(tab-land) {
+                margin-top: 15px;
+              }
+            }
+            .adress {
+              margin-top: 20px;
+              @include respond(tab-land) {
+                margin-top: 15px;
+              }
+            }
+            div {
+              font-size: 18px;
+            }
+          }
+          .right {
+            form {
+              background: var(--white);
+              padding: 65px 40px;
+              background: var(--lightBlack);
+              border-radius: 14px;
+              input {
+                margin-right: 20px;
+                padding: 22px 35px;
+                border-radius: 14px;
+                border: 1px solid var(--white);
+                background: var(--lightBlack);
+                color: var(--white);
+                font-size: 18px;
+                @include respond(tab-land) {
+                  margin-right: 0px;
+                }
+                @include respond(small-phone) {
+                  padding: 10px 15px;
+                }
+              }
+              button {
+                background: var(--inchworm);
+                color: var(--black);
+                &:hover {
+                  background: var(--black);
+                  color: var(--white);
+                }
+                @include respond(tab-land) {
+                  margin-top: 22px;
+                }
+                @include respond(small-phone) {
+                  padding: 10px 15px;
+                }
+              }
+              @include respond(tab-land) {
+                display: flex;
+                flex-direction: column;
+                margin-top: 37px;
+                padding: 30px;
+              }
+              @include respond(small-phone) {
+                padding: 20px;
+              }
+            }
+          }
+          .social.desktop-hide {
+            display: none;
+            img {
+              margin-right: 20px;
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+            @include respond(tab-land) {
+              display: flex;
+              margin-top: 37px;
+            }
+          }
+          @include respond(tab-land) {
+            margin-top: 37px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+          }
+        }
+        .bottom {
+          display: flex;
+          padding-top: 50px;
+          p {
+            font-size: 18px;
+            margin-right: 40px;
+            @include respond(tab-land) {
+              font-size: 15px;
+              margin-right: 0px;
+            }
+          }
+          a {
+            color: var(--white);
+            font-size: 18px;
+            text-decoration-line: underline;
+            @include respond(tab-land) {
+              font-size: 15px;
+              margin-top: 15px;
+            }
+          }
+          @include respond(tab-land) {
+            padding-top: 37px;
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+  @include respond(phone) {
+    margin-top: 90px;
+  }
+}
