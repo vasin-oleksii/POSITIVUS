@@ -22,7 +22,6 @@ const Testimonials = () => {
 
   const handleActiveSlide = (num: number) => {
     setActiveSlide(num);
-    //! console.log(swiperRef.current);
     swiperRef.current && swiperRef.current.slideTo(num);
   };
 
@@ -81,6 +80,8 @@ const Testimonials = () => {
             />
             <div className="stars">
               {testimonials.map((el, i) => {
+                el = el;
+
                 return i === activeSlide ? (
                   <img src={StarGreen} alt="StarGreen" />
                 ) : (
