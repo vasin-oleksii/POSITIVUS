@@ -76,12 +76,15 @@ const Testimonials = () => {
               src={ArrowLeft}
               alt="ArrowLeft"
               onClick={() => moveSlide("prev")}
-              style={activeSlide === 0 ? { opacity: 0.3 } : { opacity: 1 }}
+              style={
+                activeSlide === 0
+                  ? { opacity: 0.3, cursor: "default" }
+                  : { opacity: 1 }
+              }
             />
             <div className="stars">
               {testimonials.map((el, i) => {
                 el = el;
-
                 return i === activeSlide ? (
                   <img src={StarGreen} alt="StarGreen" />
                 ) : (
@@ -99,7 +102,7 @@ const Testimonials = () => {
               onClick={() => moveSlide("next")}
               style={
                 activeSlide === testimonials.length - 1
-                  ? { opacity: 0.3 }
+                  ? { opacity: 0.3, cursor: "default" }
                   : { opacity: 1 }
               }
             />
