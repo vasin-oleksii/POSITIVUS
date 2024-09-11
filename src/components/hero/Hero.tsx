@@ -15,7 +15,9 @@ const Hero = () => {
             online through a range of services including SEO, PPC, social media
             marketing, and content creation.
           </p>
-          <button className="btn">Book a consultation</button>
+          <div>
+            <button className="btn">Book a consultation</button>
+          </div>
         </div>
         <img src={IlustrationHero} alt="Ilustration Hero" />
         <h1 className="apparing-phone">

@@ -20,10 +20,13 @@
           padding-right: 10px;
         }
       }
-      button.btn {
-        margin-top: 35px;
-        @include respond(tab-land) {
-          margin-top: 40px;
+      div {
+        display: inline-block;
+        button.btn {
+          margin-top: 35px;
+          @include respond(tab-land) {
+            margin-top: 40px;
+          }
         }
       }
     }
