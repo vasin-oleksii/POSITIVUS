@@ -1,50 +1,22 @@
-# React + TypeScript + Vite
+# Positivus Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Tech Stack](https://skillicons.dev/icons?i=html,css,react,typescript,vite)
 
-Currently, two official plugins are available:
+This project involves slicing the Positivus Landing Page design from [@olgaaverchenko](https://www.figma.com/@olgaaverchenko) on Figma's [community design](https://www.figma.com/community/file/1230604708032389430) into a fully functional web application using **React.js** and **CSS3**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Positivus Mockup](/public/mockup.webp)
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **HTML5**: Structuring the content of the webpage.
+- **CSS3**: Styling and layout, including responsiveness and animations.
+- **React.js**: Building dynamic and reusable UI components.
+- **TypeScript**: Enhancing JavaScript with static typing for improved developer experience.
+- **Vite**: Fast build tool and development server for modern web projects.
 
-- Configure the top-level `parserOptions` property like this:
+## Features
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Live Demo
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Experience the live version of the Positivus Landing Page here:  
+[https://positivus-pearl.vercel.app/](https://positivus-pearl.vercel.app/)

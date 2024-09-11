@@ -22,6 +22,7 @@ function App() {
       <Team />
       <Testimonials />
       <Contact />
+
       <Foother />
     </>
   );
