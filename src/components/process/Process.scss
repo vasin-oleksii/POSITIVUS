@@ -38,9 +38,13 @@
             }
           }
           .right {
+            transition: all 0.3s ease-out;
             cursor: pointer;
             @include respond(phone) {
               width: 30px;
+            }
+            &:hover {
+              transform: rotate(180deg);
             }
           }
         }

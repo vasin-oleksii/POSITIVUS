@@ -54,6 +54,7 @@
     }
     a {
       cursor: pointer;
+      transition: all 0.3s ease-out;
       margin-top: 93px;
       display: flex;
       align-items: center;
@@ -63,6 +64,10 @@
         @include respond(tab-land) {
           display: none;
         }
+      }
+      &:hover {
+        transition: all 0.3s ease-out;
+        transform: rotate(5deg);
       }
     }
     div.right {

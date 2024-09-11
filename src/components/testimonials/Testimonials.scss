@@ -34,6 +34,10 @@
             max-width: 270px;
             padding: 30px 30px 32.28px 30px;
           }
+          &:hover + .bottom h5 {
+            transition: all 0.3s ease-out;
+            transform: rotate(2deg);
+          }
         }
         .bottom {
           margin-top: 48.05px;

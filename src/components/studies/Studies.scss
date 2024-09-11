@@ -29,10 +29,15 @@
         }
         a {
           cursor: pointer;
+          transition: all 0.3s ease-out;
           padding-top: 20px;
           display: flex;
           p {
             font-size: 20px;
+          }
+          &:hover {
+            transition: all 0.3s ease-out;
+            transform: rotate(2deg);
           }
         }
         p {
