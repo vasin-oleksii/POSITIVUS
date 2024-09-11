@@ -1,31 +1,26 @@
-import Hero from "./components/hero/Hero";
-import Navbar from "./components/navbar/Navbar";
-import Favors from "./components/favors/Favors";
-import Things from "./components/things/Things";
-import Studies from "./components/studies/Studies";
-import Process from "./components/process/Process";
-import Team from "./components/team/Team";
-import Testimonials from "./components/testimonials/Testimonials";
-import Contact from "./components/сontact/Contact";
-import Foother from "./components/foother/Foother";
+import Preloader from "./components/common/reloader/Preloader";
+
+import { useEffect, useState } from "react";
+import LandingPage from "./components/LandingPage";
 
 function App() {
-  return (
-    <>
-      <Navbar />
+  const [isLoading, setIsLoading] = useState(true);
 
-      <Hero />
-      <Favors />
-      <Things />
-      <Studies />
-      <Process />
-      <Team />
-      <Testimonials />
-      <Contact />
+  useEffect(() => {
+    const handleIsLoading = () => {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1000);
+    };
 
-      <Foother />
-    </>
-  );
+    window.addEventListener("load", handleIsLoading);
+
+    return () => {
+      window.removeEventListener("load", handleIsLoading);
+    };
+  }, []);
+
+  return <>{isLoading ? <Preloader /> : <LandingPage />}</>;
 }
 
 export default App;
