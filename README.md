@@ -1,7 +1,5 @@
 # Positivus Landing Page
 
-![Tech Stack](https://skillicons.dev/icons?i=html,css,react,typescript,vite)
-
 This project involves slicing the Positivus Landing Page design from [@olgaaverchenko](https://www.figma.com/@olgaaverchenko) on Figma's [community design](https://www.figma.com/community/file/1230604708032389430) into a fully functional web application using **React.js** and **CSS3**.
 
 ![Positivus Mockup](/public/mockup.webp)
