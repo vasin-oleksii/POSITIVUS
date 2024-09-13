@@ -10,7 +10,6 @@ export interface StudiesInfo {
   text: string;
   color: "#fff" | "#b9ff66" | "#191a23";
   textButton: string;
-  id: number;
 }
 
 const Studies = () => {
@@ -31,27 +30,31 @@ const Studies = () => {
             clickable: true,
           }}
         >
-          {studiesInfo.map(({ text, color, textButton, id }: StudiesInfo) => {
-            return (
-              <SwiperSlide>
+          {studiesInfo.map(
+            ({ text, color, textButton }: StudiesInfo, id: number) => {
+              return (
+                <SwiperSlide key={id}>
+                  <div className="content__item">
+                    <p>{text}</p>
+                    <LabelArrow title={textButton} color={color} />
+                  </div>
+                </SwiperSlide>
+              );
+            }
+          )}
+        </Swiper>
+
+        <div className="studies__content mobile--hide">
+          {studiesInfo.map(
+            ({ text, color, textButton }: StudiesInfo, id: number) => {
+              return (
                 <div className="content__item" key={id}>
                   <p>{text}</p>
                   <LabelArrow title={textButton} color={color} />
                 </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-
-        <div className="studies__content mobile--hide">
-          {studiesInfo.map(({ text, color, textButton, id }: StudiesInfo) => {
-            return (
-              <div className="content__item" key={id}>
-                <p>{text}</p>
-                <LabelArrow title={textButton} color={color} />
-              </div>
-            );
-          })}
+              );
+            }
+          )}
         </div>
       </div>
     </section>

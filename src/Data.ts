@@ -22,7 +22,6 @@ export const teamInfo = [
     about:
       "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy",
     socialIcon: Linkedin,
-    id: 1,
   },
   {
     image: Picture2,
@@ -31,7 +30,6 @@ export const teamInfo = [
     about:
       "7+ years of experience in project management and team leadership. Strong organizational and communication skills",
     socialIcon: Linkedin,
-    id: 2,
   },
   {
     image: Picture3,
@@ -40,7 +38,6 @@ export const teamInfo = [
     about:
       "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization",
     socialIcon: Linkedin,
-    id: 3,
   },
   {
     image: Picture4,
@@ -49,7 +46,6 @@ export const teamInfo = [
     about:
       "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
     socialIcon: Linkedin,
-    id: 4,
   },
   {
     image: Picture5,
@@ -58,7 +54,6 @@ export const teamInfo = [
     about:
       "4+ years of experience in social media marketing. Proficient in creating and scheduling content, analyzing metrics, and building engagement",
     socialIcon: Linkedin,
-    id: 5,
   },
   {
     image: Picture6,
@@ -67,7 +62,6 @@ export const teamInfo = [
     about:
       "2+ years of experience in writing and editing Skilled in creating compelling, SEO-optimized content for various industries",
     socialIcon: Linkedin,
-    id: 6,
   },
 ];
 

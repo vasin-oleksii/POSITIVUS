@@ -10,12 +10,12 @@ const Preloader = () => {
         viewBox="0 0 100 100"
         fill="none"
       >
-        <g clip-path="url(#clip0_332_1231)">
+        <g clipPath="url(#clip0_332_1231)">
           <path
             d="M67.4844 32.5092L98.9604 49.6591L67.4844 66.9468L50.2656 98.3539L33.0468 66.9468L1.57084 49.6591L33.0468 32.5092L50.2656 0.964355L67.4844 32.5092Z"
             fill="black"
             stroke="white"
-            stroke-miterlimit="10"
+            strokeMiterlimit="10"
           />
         </g>
         <defs>

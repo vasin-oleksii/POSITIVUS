@@ -14,7 +14,7 @@ function App() {
     };
 
     window.addEventListener("load", handleIsLoading);
-
+    handleIsLoading();
     return () => {
       window.removeEventListener("load", handleIsLoading);
     };

@@ -52,10 +52,10 @@ const Testimonials = () => {
             onSlideChange={(e) => handleActiveSlide(e.activeIndex)}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
           >
-            {testimonials.map(({ text, name, job }, i: number) => {
+            {testimonials.map(({ text, name, job }, id: number) => {
               return (
-                <SwiperSlide>
-                  <div className="content__item" key={i}>
+                <SwiperSlide key={id}>
+                  <div className="content__item">
                     <div className="top">
                       <p>{text}</p>
                     </div>
@@ -86,12 +86,13 @@ const Testimonials = () => {
               {testimonials.map((el, i) => {
                 el = el;
                 return i === activeSlide ? (
-                  <img src={StarGreen} alt="StarGreen" />
+                  <img src={StarGreen} alt="StarGreen" key={i} />
                 ) : (
                   <img
                     src={StarGrey}
                     alt="StarGrey"
                     onClick={() => handleActiveSlide(i)}
+                    key={i}
                   />
                 );
               })}

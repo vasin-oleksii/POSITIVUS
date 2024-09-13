@@ -8,7 +8,6 @@ interface TeamInfo {
   job: string;
   about: string;
   socialIcon: string;
-  id: number;
 }
 
 const Team = () => {
@@ -21,7 +20,7 @@ const Team = () => {
         />
         <div className="content">
           {teamInfo.map(
-            ({ image, name, job, about, socialIcon, id }: TeamInfo) => {
+            ({ image, name, job, about, socialIcon }, id: number) => {
               return (
                 <div className="content__item" key={id}>
                   <div className="item__top">
