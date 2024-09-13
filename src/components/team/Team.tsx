@@ -2,14 +2,6 @@ import "./Team.scss";
 import InfoBlock from "../common/InfoBlock/InfoBlock";
 import { teamInfo } from "../../Data";
 
-interface TeamInfo {
-  image: string;
-  name: string;
-  job: string;
-  about: string;
-  socialIcon: string;
-}
-
 const Team = () => {
   return (
     <section className="team">
