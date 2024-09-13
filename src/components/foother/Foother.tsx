@@ -4,8 +4,46 @@ import Logo from "../../assets/LogoWhite.svg";
 import Linkedin from "../../assets/icons/LinkWhite.svg";
 import Facebook from "../../assets/icons/FbWhite.svg";
 import Twitter from "../../assets/icons/TwWhite.svg";
+import { useState } from "react";
 
 const Foother = () => {
+  const [formData, setFormData] = useState<{ email: string }>({
+    email: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const respons = await fetch(
+        "https://jsonplaceholder.typicode.com/posts",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }
+      );
+
+      if (!respons.ok) {
+        throw new Error("Smth wrong");
+      }
+
+      const data = await respons.json();
+      console.log("Success ", data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   return (
     <footer className="foother">
       <div className="foother__container wrapper">
@@ -48,12 +86,14 @@ const Foother = () => {
                 </div>
               </div>
               <div className="right">
-                <form action="#">
+                <form onSubmit={onSubmit}>
                   <input
                     type="email"
                     name="email"
                     placeholder="Email"
                     required
+                    onChange={handleChange}
+                    value={formData.email}
                   />
                   <button className="btn" type="submit">
                     Subscribe to news
