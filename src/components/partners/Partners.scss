@@ -61,10 +61,10 @@
   ul.left {
     @include respond(tab-port) {
       width: 110%;
+      animation: moveMarginLeft 10s infinite;
       li:first-child {
         margin-left: 17px;
       }
-      animation: moveMarginLeft 10s infinite;
       @keyframes moveMarginLeft {
         0% {
           margin-left: 0px;

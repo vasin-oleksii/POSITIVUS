@@ -17,6 +17,7 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [formSended, setFormSended] = useState<boolean>(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -46,6 +47,8 @@ const Contact = () => {
 
       const data = await respons.json();
       console.log("Success ", data);
+      setFormData({ option: "", name: "", email: "", message: "" });
+      setFormSended(true);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -69,6 +72,7 @@ const Contact = () => {
                   name="option"
                   onChange={handleChange}
                   value="say Hi"
+                  checked={formData.option === "say Hi"}
                 />
                 <label htmlFor="sayHi" id="hi">
                   <span className="custom-radio"></span> Say Hi
@@ -80,6 +84,7 @@ const Contact = () => {
                   name="option"
                   onChange={handleChange}
                   value="Get a Quote"
+                  checked={formData.option === "Get a Quote"}
                 />
                 <label htmlFor="GetaQuote">
                   <span className="custom-radio"></span> Get a Quote
@@ -124,6 +129,7 @@ const Contact = () => {
             <button className="btn" type="submit">
               Send Message
             </button>
+            {formSended ? <div>Your message was sent :)</div> : ""}
           </form>
         </div>
       </div>

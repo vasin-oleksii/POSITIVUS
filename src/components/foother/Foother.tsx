@@ -10,6 +10,7 @@ const Foother = () => {
   const [formData, setFormData] = useState<{ email: string }>({
     email: "",
   });
+  const [formSended, setFormSended] = useState<boolean>(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -36,9 +37,11 @@ const Foother = () => {
       if (!respons.ok) {
         throw new Error("Smth wrong");
       }
-
       const data = await respons.json();
       console.log("Success ", data);
+
+      setFormData({ email: "" });
+      setFormSended(true);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -98,6 +101,8 @@ const Foother = () => {
                   <button className="btn" type="submit">
                     Subscribe to news
                   </button>
+
+                  {formSended ? <div> Your message was sent :)</div> : ""}
                 </form>
               </div>
               <div className="social desktop-hide">
