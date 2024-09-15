@@ -1,58 +1,54 @@
 import "./Contact.scss";
+
 import InfoBlock from "../common/InfoBlock/InfoBlock";
 import IllustrationContact from "../../assets/IllustrationContact.svg";
-import { useState } from "react";
 
-interface FormData {
-  option: string;
-  name: string;
-  email: string;
-  message: string;
-}
+import { useState } from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const Contact = () => {
-  const [formData, setFormData] = useState<FormData>({
-    option: "",
-    name: "",
-    email: "",
-    message: "",
-  });
   const [formSended, setFormSended] = useState<boolean>(false);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({ ...prevState, [name]: value }));
-  };
+  const formik = useFormik({
+    initialValues: { option: "", name: "", email: "", message: "" },
+    validationSchema: Yup.object({
+      option: Yup.string(),
+      name: Yup.string()
+        .max(20, "Must be 20 characters or less")
+        .min(3, "Must be 3 characters or more"),
+      email: Yup.string().email("Invalid email address").required("Required"),
+      message: Yup.string()
+        .min(15, "Must be 15 characters or more")
+        .max(500, "Must be 500 characters or less")
+        .required("Required"),
+    }),
+    onSubmit: async (value, { resetForm }) => {
+      try {
+        const respons = await fetch(
+          "https://jsonplaceholder.typicode.com/posts",
+          {
+            method: "POST",
+            body: JSON.stringify(value),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+            },
+          }
+        );
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    try {
-      const respons = await fetch(
-        "https://jsonplaceholder.typicode.com/posts",
-        {
-          method: "POST",
-          body: JSON.stringify(formData),
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-          },
+        if (!respons.ok) {
+          throw new Error("Smth wrong");
         }
-      );
+        const data = await respons.json();
+        console.log("Success ", data);
 
-      if (!respons.ok) {
-        throw new Error("Smth wrong");
+        setFormSended(true);
+        resetForm();
+      } catch (error) {
+        console.error("Error:", error);
       }
-
-      const data = await respons.json();
-      console.log("Success ", data);
-      setFormData({ option: "", name: "", email: "", message: "" });
-      setFormSended(true);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
+    },
+  });
 
   return (
     <section className="contact">
@@ -63,16 +59,17 @@ const Contact = () => {
         />
         <div className="content">
           <img src={IllustrationContact} alt="IllustrationContact" />
-          <form onSubmit={onSubmit}>
+          <form onSubmit={formik.handleSubmit}>
             <div>
               <fieldset>
                 <input
                   type="radio"
                   id="sayHi"
                   name="option"
-                  onChange={handleChange}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
                   value="say Hi"
-                  checked={formData.option === "say Hi"}
+                  checked={formik.values.option === "say Hi"}
                 />
                 <label htmlFor="sayHi" id="hi">
                   <span className="custom-radio"></span> Say Hi
@@ -82,9 +79,10 @@ const Contact = () => {
                   type="radio"
                   id="GetaQuote"
                   name="option"
-                  onChange={handleChange}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
                   value="Get a Quote"
-                  checked={formData.option === "Get a Quote"}
+                  checked={formik.values.option === "Get a Quote"}
                 />
                 <label htmlFor="GetaQuote">
                   <span className="custom-radio"></span> Get a Quote
@@ -92,44 +90,59 @@ const Contact = () => {
               </fieldset>
 
               <label htmlFor="name" className="name">
-                Name
+                <span>Name</span>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.name}
+                />
+                {formik.touched.name && formik.errors.name ? (
+                  <div>{formik.errors.name}</div>
+                ) : null}
               </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Name"
-                onChange={(e) => handleChange(e)}
-                value={formData.name}
-              />
 
-              <label htmlFor="email">Email*</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="Email"
-                onChange={(e) => handleChange(e)}
-                value={formData.email}
-              />
+              <label htmlFor="email">
+                <span>Email*</span>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="Email"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.email}
+                />
+                {formik.touched.email && formik.errors.email ? (
+                  <div>{formik.errors.email}</div>
+                ) : null}
+              </label>
 
-              <label htmlFor="message">Message*</label>
-              <textarea
-                rows={7}
-                id="message"
-                name="message"
-                required
-                placeholder="Message"
-                onChange={(e) => handleChange(e)}
-                value={formData.message}
-              />
+              <label htmlFor="message">
+                <span>Message*</span>
+                <textarea
+                  rows={7}
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="Message"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.message}
+                />
+                {formik.touched.message && formik.errors.message ? (
+                  <div>{formik.errors.message}</div>
+                ) : null}
+              </label>
             </div>
 
             <button className="btn" type="submit">
-              Send Message
+              {formSended ? "Thank you for sending" : "Send Message"}
             </button>
-            {formSended ? <div>Your message was sent :)</div> : ""}
           </form>
         </div>
       </div>

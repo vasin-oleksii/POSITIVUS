@@ -149,6 +149,9 @@
                   padding: 10px 15px;
                 }
               }
+              div {
+                color: var(--red);
+              }
               @include respond(tab-land) {
                 display: flex;
                 flex-direction: column;

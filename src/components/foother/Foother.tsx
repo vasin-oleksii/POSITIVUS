@@ -4,48 +4,45 @@ import Logo from "../../assets/LogoWhite.svg";
 import Linkedin from "../../assets/icons/LinkWhite.svg";
 import Facebook from "../../assets/icons/FbWhite.svg";
 import Twitter from "../../assets/icons/TwWhite.svg";
+
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import { useState } from "react";
 
 const Foother = () => {
-  const [formData, setFormData] = useState<{ email: string }>({
-    email: "",
-  });
   const [formSended, setFormSended] = useState<boolean>(false);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({ ...prevState, [name]: value }));
-  };
+  const formik = useFormik({
+    initialValues: { email: "" },
+    validationSchema: Yup.object({
+      email: Yup.string().email("Invalid email address").required("Required"),
+    }),
+    onSubmit: async (value, { resetForm }) => {
+      try {
+        const respons = await fetch(
+          "https://jsonplaceholder.typicode.com/posts",
+          {
+            method: "POST",
+            body: JSON.stringify(value),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+            },
+          }
+        );
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    try {
-      const respons = await fetch(
-        "https://jsonplaceholder.typicode.com/posts",
-        {
-          method: "POST",
-          body: JSON.stringify(formData),
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-          },
+        if (!respons.ok) {
+          throw new Error("Smth wrong");
         }
-      );
+        const data = await respons.json();
+        console.log("Success ", data);
 
-      if (!respons.ok) {
-        throw new Error("Smth wrong");
+        setFormSended(true);
+        resetForm();
+      } catch (error) {
+        console.error("Error:", error);
       }
-      const data = await respons.json();
-      console.log("Success ", data);
-
-      setFormData({ email: "" });
-      setFormSended(true);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
+    },
+  });
 
   return (
     <footer className="foother">
@@ -89,20 +86,22 @@ const Foother = () => {
                 </div>
               </div>
               <div className="right">
-                <form onSubmit={onSubmit}>
+                <form onSubmit={formik.handleSubmit}>
                   <input
                     type="email"
                     name="email"
                     placeholder="Email"
                     required
-                    onChange={handleChange}
-                    value={formData.email}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.email}
                   />
                   <button className="btn" type="submit">
-                    Subscribe to news
+                    {formSended ? "Thank you for sending" : "Subscribe to news"}
                   </button>
-
-                  {formSended ? <div> Your message was sent :)</div> : ""}
+                  {formik.touched.email && formik.errors.email ? (
+                    <div>{formik.errors.email}</div>
+                  ) : null}
                 </form>
               </div>
               <div className="social desktop-hide">
