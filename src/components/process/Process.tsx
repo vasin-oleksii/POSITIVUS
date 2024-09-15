@@ -26,38 +26,30 @@ const Process = () => {
           description="Step-by-Step Guide to Achieving Your Business Goals"
         />
         <div className="process__content">
-          {processInfo.map(({ id, text, description }: ProcessInfo) => (
-            <div
-              className={activeItemId === id ? "item active" : "item"}
-              key={id}
-            >
-              <div className={activeItemId === id ? "top active" : "top"}>
-                <div className="left">
-                  <div className="number">0{id}</div>
-                  <p>{text}</p>
-                </div>
+          {processInfo.map(({ id, text, description }: ProcessInfo) => {
+            const isActiveItemId = activeItemId === id;
 
-                {activeItemId === id ? (
+            return (
+              <div className={isActiveItemId ? "item active" : "item"} key={id}>
+                <div className={isActiveItemId ? "top active" : "top"}>
+                  <div className="left">
+                    <div className="number">0{id}</div>
+                    <p>{text}</p>
+                  </div>
+
                   <img
-                    src={BtnMinus}
-                    alt="BtnMinus"
+                    src={isActiveItemId ? BtnMinus : BtnPlus}
+                    alt={isActiveItemId ? "BtnMinus" : "BtnPlus"}
                     className="right"
                     onClick={() => handleActiveItemId(id)}
                   />
-                ) : (
-                  <img
-                    src={BtnPlus}
-                    alt="BtnPlus"
-                    className="right"
-                    onClick={() => handleActiveItemId(id)}
-                  />
-                )}
+                </div>
+                <div className={isActiveItemId ? "bottom" : "bottom hidden"}>
+                  <p>{description}</p>
+                </div>
               </div>
-              <div className={activeItemId === id ? "bottom" : "bottom hidden"}>
-                <p>{description}</p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
