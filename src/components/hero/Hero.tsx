@@ -19,7 +19,7 @@ const Hero = () => {
             <button className="btn">Book a consultation</button>
           </div>
         </div>
-        <img src={IlustrationHero} alt="Ilustration Hero" />
+        <img src={IlustrationHero} alt="Ilustration Hero" loading="lazy" />
         <h1 className="apparing-phone">
           Navigating the digital landscape for success
         </h1>
