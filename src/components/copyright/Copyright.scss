@@ -1,0 +1,75 @@
+@import "../../index.scss";
+
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+  background: var(--black);
+
+  a {
+    display: block;
+    position: relative;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+
+    span {
+      font-size: 1.5rem;
+      position: relative;
+      display: inline-block;
+      transition: color 0.5s ease;
+      animation: glitch 2s infinite;
+    }
+
+    &:hover span {
+      animation: none;
+    }
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  10% {
+    transform: translate(-2px, 2px);
+    text-shadow: 2px 2px var(--red), -2px -2px blue;
+  }
+  20% {
+    transform: translate(2px, -2px);
+    text-shadow: -2px 2px cyan, 2px -2px magenta;
+  }
+  30% {
+    transform: translate(-1px, 1px);
+    text-shadow: 1px -1px var(--inchworm), -1px 1px yellow;
+  }
+  40% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+  50% {
+    transform: translate(2px, -1px);
+    text-shadow: -1px -2px var(--red), 1px 2px blue;
+  }
+  60% {
+    transform: translate(-2px, 1px);
+    text-shadow: 2px -1px cyan, -2px 1px magenta;
+  }
+  70% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+  80% {
+    transform: translate(1px, 2px);
+    text-shadow: -2px 2px var(--inchworm), 2px -2px yellow;
+  }
+  90% {
+    transform: translate(-1px, -2px);
+    text-shadow: 1px 1px var(--red), -1px -1px blue;
+  }
+  100% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+}

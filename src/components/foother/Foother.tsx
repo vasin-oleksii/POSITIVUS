@@ -1,5 +1,7 @@
 import "./Foother.scss";
 
+import Copyright from "../copyright/Copyright";
+
 import Logo from "../../assets/LogoWhite.svg";
 import Linkedin from "../../assets/icons/LinkWhite.svg";
 import Facebook from "../../assets/icons/FbWhite.svg";
@@ -116,6 +118,7 @@ const Foother = () => {
             </div>
           </div>
         </div>
+        <Copyright />
       </div>
     </footer>
   );
