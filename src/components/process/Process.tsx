@@ -19,7 +19,7 @@ const Process = () => {
   };
 
   return (
-    <section className="process">
+    <section className="process" id="process">
       <div className="process__container wrapper">
         <InfoBlock
           title="Our Working Process "

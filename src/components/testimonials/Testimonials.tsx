@@ -31,7 +31,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="testimonials">
+    <section className="testimonials" id="testimonials">
       <div className="testimonials__container wrapper">
         <InfoBlock
           title="Testimonials"

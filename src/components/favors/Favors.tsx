@@ -15,7 +15,7 @@ export interface FavorInfo {
 
 const Favors = () => {
   return (
-    <section className="favors">
+    <section className="favors" id="favors">
       <div className="favors__container wrapper">
         <InfoBlock
           title="Services"

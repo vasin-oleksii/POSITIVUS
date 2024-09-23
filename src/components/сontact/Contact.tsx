@@ -51,7 +51,7 @@ const Contact = () => {
   });
 
   return (
-    <section className="contact">
+    <section className="contact" id="contact">
       <div className="contact__container wrapper">
         <InfoBlock
           title="Contact Us"

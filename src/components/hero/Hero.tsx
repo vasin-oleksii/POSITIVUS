@@ -16,7 +16,9 @@ const Hero = () => {
             marketing, and content creation.
           </p>
           <div>
-            <button className="btn">Book a consultation</button>
+            <a href="#contact">
+              <button className="btn">Book a consultation</button>
+            </a>
           </div>
         </div>
         <img src={IlustrationHero} alt="Ilustration Hero" loading="lazy" />

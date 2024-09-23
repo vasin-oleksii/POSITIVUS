@@ -16,22 +16,24 @@ const Navbar = () => {
         <div className={showNav ? "show" : ""}>
           <ul>
             <li>
-              <a href="#">About us</a>
+              <a href="#team">About us</a>
             </li>
             <li>
-              <a href="#">Services</a>
+              <a href="#favors">Services</a>
             </li>
             <li>
-              <a href="#">Use Cases</a>
+              <a href="#studies">Use Cases</a>
             </li>
             <li>
-              <a href="#">Pricing</a>
+              <a href="#process">Pricing</a>
             </li>
             <li>
-              <a href="#">Blog</a>
+              <a href="#testimonials">Blog</a>
             </li>
           </ul>
-          <button className="btn btn-clear">Request a quote</button>
+          <a href="#contact">
+            <button className="btn btn-clear">Request a quote</button>
+          </a>
         </div>
         <div className="navbar__menu" onClick={() => setShowNav(!showNav)}>
           {showNav ? <IoCloseOutline /> : <IoMenuOutline />}

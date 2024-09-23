@@ -14,7 +14,7 @@ export interface StudiesInfo {
 
 const Studies = () => {
   return (
-    <section className="studies">
+    <section className="studies" id="studies">
       <div className="studies__container wrapper">
         <InfoBlock
           title="Case Studies"

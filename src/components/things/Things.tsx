@@ -12,7 +12,9 @@ const Things = () => {
               Contact us today to learn more about how our digital marketing
               services can help your business grow and succeed online.
             </p>
-            <button className="btn">Get your free proposal</button>
+            <a href="#contact">
+              <button className="btn">Get your free proposal</button>
+            </a>
           </div>
           <div className="img">
             <img src={IllustrationProposal} alt="IllustrationProposal" />

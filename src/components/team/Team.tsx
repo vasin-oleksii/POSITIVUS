@@ -4,7 +4,7 @@ import { teamInfo } from "../../Data";
 
 const Team = () => {
   return (
-    <section className="team">
+    <section className="team" id="team">
       <div className="team__container wrapper">
         <InfoBlock
           title="Team"
@@ -34,7 +34,9 @@ const Team = () => {
           )}
         </div>
         <div className="more">
-          <button className="btn">See all team</button>
+          <a href="#contact">
+            <button className="btn">See all team</button>
+          </a>
         </div>
       </div>
     </section>
