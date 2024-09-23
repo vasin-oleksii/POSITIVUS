@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     const handleIsLoading = () => {
-      setTimeout(() => setIsLoading(false), 1000);
+      setTimeout(() => setIsLoading(false), 500);
     };
 
     window.addEventListener("load", handleIsLoading);
