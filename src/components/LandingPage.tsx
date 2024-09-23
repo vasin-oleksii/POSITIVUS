@@ -9,9 +9,12 @@ import Testimonials from "./testimonials/Testimonials";
 import Contact from "./сontact/Contact";
 import Foother from "./foother/Foother";
 
+import ProgressBar from "react-scroll-progress-bar";
+
 const LandingPage = () => {
   return (
     <>
+      <ProgressBar bgcolor="#b9ff66" duration="0" height="8" />
       <Navbar />
 
       <Hero />
